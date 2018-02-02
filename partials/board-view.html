@@ -7,5 +7,6 @@
     <div ng-repeat="board in boards">
         <h6><a ng-href="#">{{board.name}}</a></h6>
         <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
+        <h6><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h6>
     </div>
 </div>

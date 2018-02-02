@@ -11,7 +11,7 @@ angular.module("SweetApp", ["ngRoute"])
             templateUrl: "partials/board-view.html",
             controller: "BoardCtrl"
         })
-        .when("/pins", {
+        .when("/pins/:boardId", {
             templateUrl: "partials/pin-view.html",
             controller: "PinCtrl"
         })

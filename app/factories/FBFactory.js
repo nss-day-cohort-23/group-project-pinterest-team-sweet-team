@@ -48,10 +48,10 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    function addPin() {
+    function addPin(newPin) {
         return $q( (resolve, reject) => {
             $http
-            .put(`https://unpinterested-7fd33.firebaseio.com/pins.json`)
+            .post(`https://unpinterested-7fd33.firebaseio.com/pins.json`, JSON.stringify(newPin))
             .then( (data) => {
                 resolve(data);
             })
