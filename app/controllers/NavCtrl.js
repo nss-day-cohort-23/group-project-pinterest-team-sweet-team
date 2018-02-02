@@ -22,7 +22,7 @@ angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory) {
                     console.log('User: ', user);
                 });
             } else {
-                console.log('which one?', item );                
+                AuthFactory.logout();
             }
         }; 
 });
