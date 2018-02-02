@@ -19,8 +19,9 @@ angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $
 
     // This function saves the new board object when the user clicks "Create"
     $scope.saveBoard = () => {
+        console.log("save board is running");
         console.log("New board object", $scope.newBoard);
-        $scope.newBoard.uid = firebase.auth().currentUser.id;
+        // $scope.newBoard.uid = firebase.auth().currentUser.id;
         FbFactory.addBoard($scope.newBoard)
         .then( (board) => {
             $location.url("/boards");
