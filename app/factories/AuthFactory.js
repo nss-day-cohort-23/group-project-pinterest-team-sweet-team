@@ -4,6 +4,7 @@
 angular.module("SweetApp").factory("AuthFactory", (FBcreds, $q)=>{
     const provider = new firebase.auth.GoogleAuthProvider();
 
+    let login = () => {
     return firebase
         .auth()
         .signInWithPopup(provider)
@@ -18,10 +19,16 @@ angular.module("SweetApp").factory("AuthFactory", (FBcreds, $q)=>{
             var email = error.email;
             var credential = error.credential;
             console.log("error",error);
-        }) 
-        .signOut().then(function() {
+        });
+    };
+
+    let logout = () => {
+        firebase.auth().signOut().then(function() {
             // Sign-out successful.
           }).catch(function(error) {
             // An error happened.
           });
+        };
+
+        return {login, logout};
 });
