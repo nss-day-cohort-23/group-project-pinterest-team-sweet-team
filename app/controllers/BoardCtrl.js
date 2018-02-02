@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $routeParams, $location, $window) {
+angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $routeParams, $location, $route, $window) {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -30,7 +30,7 @@ angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $
                 FbFactory.addBoard($scope.newBoard)
                 .then( (board) => {
                     // $location.url("/boards");
-                    $window.location.reload("/boards");
+                    $route.reload("/boards");
         
                 });
             };
