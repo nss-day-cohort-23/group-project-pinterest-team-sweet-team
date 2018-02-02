@@ -5,7 +5,7 @@ angular.module("SweetApp").factory("FbFactory", (FBUrl, $http, $q) => {
     function getBoards() {
         return $q( (resolve, reject) => {
             $http
-            .get('')
+            .get(`${FBUrl}/`)
             .then( (data) => {
                 resolve(data);
             })
@@ -18,7 +18,7 @@ angular.module("SweetApp").factory("FbFactory", (FBUrl, $http, $q) => {
     function deleteBoards() {
         return $q( (resolve, reject) => {
             $http
-            .delete('')
+            .delete(`${FBUrl}/`)
             .then( (data) => {
                 resolve(data);
             })
@@ -31,7 +31,7 @@ angular.module("SweetApp").factory("FbFactory", (FBUrl, $http, $q) => {
     function deletePins() {
         return $q( (resolve, reject) => {
             $http
-            .delete('')
+            .delete(`${FBUrl}/`)
             .then( (data) => {
                 resolve(data);
             })
@@ -44,7 +44,7 @@ angular.module("SweetApp").factory("FbFactory", (FBUrl, $http, $q) => {
     function addPin() {
         return $q( (resolve, reject) => {
             $http
-            .put('')
+            .put(`${FBUrl}/`)
             .then( (data) => {
                 resolve(data);
             })
@@ -57,7 +57,7 @@ angular.module("SweetApp").factory("FbFactory", (FBUrl, $http, $q) => {
     function addBoard() {
         return $q( (resolve, reject) => {
             $http
-            .put('')
+            .put(`${FBUrl}/`)
             .then( (data) => {
                 resolve(data);
             })
@@ -70,7 +70,7 @@ angular.module("SweetApp").factory("FbFactory", (FBUrl, $http, $q) => {
     function getPins() {
         return $q( (resolve, reject) => {
             $http
-            .get('')
+            .get(`${FBUrl}/`)
             .then( (data) => {
                 resolve(data);
             })
