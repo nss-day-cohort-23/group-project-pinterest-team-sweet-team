@@ -17,6 +17,7 @@ angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $
         console.log("getBoards didn't work", error);
     });
 
+
     // This function saves the new board object when the user clicks "Create"
     $scope.saveBoard = () => {
         console.log("save board is running");
@@ -39,6 +40,23 @@ angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $
     .catch( (error) => {
         console.log("getPins didn't work", error);
     });
+
+    //delete boards
+    FbFactory.deleteboards()
+    .then(()=>{
+        console.log("sweet board deleted,bruh");
+        FbFactory.getBoards()
+         .then( (boards) => {
+            console.log("getBoards", boards);
+            $scope.boards = boards.data;
+        })
+        .catch( (error) => {
+            console.log("delete Boards didn't work bruh", error);
+        });
+    });
+
+
+   
 
 
 });
