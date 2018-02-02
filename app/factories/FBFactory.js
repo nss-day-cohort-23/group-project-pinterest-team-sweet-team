@@ -34,10 +34,10 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    function deletePins() {
+    function deletePins(pinId) {
         return $q( (resolve, reject) => {
             $http
-            .delete(``)
+            .delete(`https://unpinterested-7fd33.firebaseio.com/pins/${pinId}.json`)
             .then( (data) => {
                 resolve(data);
             })
@@ -73,11 +73,12 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    function getPins() {
+    function getPins(boardId) {
         return $q( (resolve, reject) => {
             $http
-            .get(``)
+            .get(`https://unpinterested-7fd33.firebaseio.com/pins.json?orderBy="boardId"&equalTo="${boardId}"`)
             .then( (data) => {
+                console.log("data", data.data);
                 resolve(data);
             })
             .catch( (error) => {

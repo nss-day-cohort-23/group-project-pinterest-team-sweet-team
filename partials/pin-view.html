@@ -6,6 +6,11 @@
         <input type="text" placeholder="Image URL" ng-model="newPin.url">
         <button ng-click="savePin()">Add Pin</button>
     </div>
+    <div ng-repeat="pin in pins">
+        <img src="{{pin.url}}" alt="?">
+        <h1>{{pin.name}}</h1>
+
+    </div>
     <!-- <ul>
         <li ng-repeat = ""></li>
         <img ng-src ="{{}}">

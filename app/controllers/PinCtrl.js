@@ -8,6 +8,12 @@ angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $ro
         url: ""
     };
 
+    FbFactory.getPins($routeParams.boardId)
+    .then( (data) => {
+        console.log("pins data", data);
+        $scope.pins = data.data;
+    });
+
     $scope.savePin = () => {
         console.log("New Pin", $scope.newPin);
         // I think "$routeParams.id" will be the boards id?
