@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $routeParams, $location, $window) {
+angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $routeParams, $location, $window, $route) {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -49,8 +49,13 @@ angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $
             console.log("not logged in");
         }
 
+
+         //delete boards
+         $scope.boardDestroy = (boardId)=>{
+            FbFactory.deleteBoards(boardId)
+            .then(()=>{
+                $route.reload("/boards");
+            });
+        };
     });
-
-
-
 });

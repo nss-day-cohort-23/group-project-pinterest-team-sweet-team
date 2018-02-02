@@ -21,10 +21,11 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    function deleteBoards() {
+    function deleteBoards(FbId) {
         return $q( (resolve, reject) => {
+            console.log("yo dog",FbId);
             $http
-            .delete(``)
+            .delete(`https://unpinterested-7fd33.firebaseio.com/boards/${FbId}.json`)
             .then( (data) => {
                 resolve(data);
             })
@@ -86,6 +87,6 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    return { addBoard, getPins, addPin, deletePins, getBoards };
+    return { addBoard, getPins, addPin, deletePins, getBoards, deleteBoards };
 
 });
