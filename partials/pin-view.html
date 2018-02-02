@@ -1,10 +1,16 @@
 <div class = "pinContainer" >
     <h1>Checkout my Sweet Stuff</h1>
-    <ul>
+    <div id="newPinCard">
+        <input type="text" placeholder="Pin Name" ng-model="newPin.name">
+        <br>
+        <input type="text" placeholder="Image URL" ng-model="newPin.url">
+        <button ng-click="savePin()">Add Pin</button>
+    </div>
+    <!-- <ul>
         <li ng-repeat = ""></li>
         <img ng-src ="{{}}">
         {{}}
         <input type ="button" ng-click="">Delete Pin
     </ul>
-    <input type = "button" ng-click"">Go Back To Board
+    <input type = "button" ng-click"">Go Back To Board -->
 </div>
