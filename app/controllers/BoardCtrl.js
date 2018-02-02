@@ -4,7 +4,6 @@ angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $
 
     // New board object
     $scope.newBoard = {
-        uid: "",
         name: ""
     };
 
