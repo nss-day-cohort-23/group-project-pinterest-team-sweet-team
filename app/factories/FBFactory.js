@@ -5,9 +5,15 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
     function getBoards() {
         return $q( (resolve, reject) => {
             $http
-            .get(``)
-            .then( (data) => {
-                resolve(data);
+            .get(`https://unpinterested-7fd33.firebaseio.com/boards.json?orderBy="uid"&equalTo="${firebase.auth().currentUser.uid}"`)
+            .then( (boards) => {
+                let keys =Object.keys(boards.data);
+                keys.forEach(key => {
+                    boards.data[key].boardId = key;
+                });
+                console.log("get boards data", boards);
+                let boardsDataArr = Object.values(boards.data);
+                resolve(boardsDataArr);
             })
             .catch( (error) => {
                 reject(error);
@@ -15,10 +21,11 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    function deleteBoards() {
+    function deleteBoards(FbId) {
         return $q( (resolve, reject) => {
+            console.log("yo dog",FbId);
             $http
-            .delete(``)
+            .delete(`https://unpinterested-7fd33.firebaseio.com/boards/${FbId}.json`)
             .then( (data) => {
                 resolve(data);
             })
@@ -80,6 +87,6 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    return { addBoard, getPins, addPin, deletePins, getBoards };
+    return { addBoard, getPins, addPin, deletePins, getBoards, deleteBoards };
 
 });
