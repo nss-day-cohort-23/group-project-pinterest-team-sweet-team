@@ -4,11 +4,13 @@
         <input type="text" placeholder="Board Name" ng-model="newBoard.name">
         <button ng-click="saveBoard()">Add Board</button>
     </div>
-        <!-- <ul>
-            <li ng-repeat=""></li>
-            {{}}
-            
-            <input type = "button" ng-click="">Delete Board
-        </ul>
+    <div ng-repeat="board in boards">
+        <h6><a ng-href="#">{{board.name}}</a></h6>
+        <button ng-click="">Delete Board</button>
+    </div>
+        <!-- <li ng-repeat="board in boards"></li>
+        {{}}
+        
+    </ul>
         <input type = "button" ng-click="">See My Pins -->
 </div>
