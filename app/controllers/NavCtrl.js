@@ -15,5 +15,5 @@ angular.module("SweetApp").controller("NavCtrl", function($scope) {
             //placeholder function//
             userFunction: "logoutUser()" 
         }
-    ]    
+    ];    
 });
