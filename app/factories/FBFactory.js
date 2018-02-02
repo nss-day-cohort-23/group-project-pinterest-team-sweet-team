@@ -54,10 +54,10 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    function addBoard() {
+    function addBoard(newBoard) {
         return $q( (resolve, reject) => {
             $http
-            .post(`https://unpinterested-7fd33.firebaseio.com/boards.json`)
+            .put(`https://unpinterested-7fd33.firebaseio.com/boards.json`, newBoard)
             .then( (data) => {
                 resolve(data);
             })
