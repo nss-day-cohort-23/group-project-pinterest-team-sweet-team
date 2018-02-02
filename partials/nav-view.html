@@ -1,0 +1,13 @@
+<nav ng-controller="NavCtrl">
+    <div>
+        <div>
+            <a href=""><img src="{{logo}}" alt="Sweet Team Logo"></a>
+            <input class="search-bar" type="text" ng-model="search">
+        </div>
+        <ul>
+            <li ng-repeat="item in navBar">
+                <a ng-click="{{item.userFunction}}">{{item.name}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
