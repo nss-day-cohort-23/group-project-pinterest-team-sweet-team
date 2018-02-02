@@ -18,5 +18,10 @@ angular.module("SweetApp").factory("AuthFactory", (FBcreds, $q)=>{
             var email = error.email;
             var credential = error.credential;
             console.log("error",error);
-        }); 
+        }) 
+        .signOut().then(function() {
+            // Sign-out successful.
+          }).catch(function(error) {
+            // An error happened.
+          });
 });
