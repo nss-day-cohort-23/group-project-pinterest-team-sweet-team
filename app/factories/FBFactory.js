@@ -5,9 +5,11 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
     function getBoards() {
         return $q( (resolve, reject) => {
             $http
-            .get(``)
+            .get(`https://unpinterested-7fd33.firebaseio.com/boards.json?orderBy="uid"&equalTo="${firebase.auth().currentUser.uid}"`)
             .then( (data) => {
-                resolve(data);
+                console.log("get boards data", data);
+                let boardsData = Object.values(data.data);
+                resolve(boardsData);
             })
             .catch( (error) => {
                 reject(error);
