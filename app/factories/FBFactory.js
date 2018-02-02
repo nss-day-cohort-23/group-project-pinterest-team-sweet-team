@@ -57,7 +57,7 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
     function addBoard(newBoard) {
         return $q( (resolve, reject) => {
             $http
-            .put(`https://unpinterested-7fd33.firebaseio.com/boards.json`, newBoard)
+            .post(`https://unpinterested-7fd33.firebaseio.com/boards.json`, JSON.stringify(newBoard))
             .then( (data) => {
                 resolve(data);
             })
