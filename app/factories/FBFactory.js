@@ -6,10 +6,14 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         return $q( (resolve, reject) => {
             $http
             .get(`https://unpinterested-7fd33.firebaseio.com/boards.json?orderBy="uid"&equalTo="${firebase.auth().currentUser.uid}"`)
-            .then( (data) => {
-                console.log("get boards data", data);
-                let boardsData = Object.values(data.data);
-                resolve(boardsData);
+            .then( (boards) => {
+                let keys =Object.keys(boards.data);
+                keys.forEach(key => {
+                    boards.data[key].boardId = key;
+                });
+                console.log("get boards data", boards);
+                let boardsDataArr = Object.values(boards.data);
+                resolve(boardsDataArr);
             })
             .catch( (error) => {
                 reject(error);
