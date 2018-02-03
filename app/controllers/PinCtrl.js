@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $routeParams, $location) {
-
+angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $routeParams, $location, _) {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
     $scope.newPin = {
         uid: "",
         name: "",
@@ -26,4 +27,18 @@ angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $ro
         });
     };
 
+    FbFactory.getBoards() //cb get board names to match to boardId on pins
+    .then((data) =>{
+        console.log("board data in pinCtrl", data); //CB
+        $scope.pinBoards = data;
+        console.log("pinBoards",$scope.pinBoards); //CB
+    }
+);
+//cb
+} else {
+    console.log("not logged in");
+}
+
+});
+//cb
 });
