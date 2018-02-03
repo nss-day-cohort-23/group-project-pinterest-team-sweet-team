@@ -87,6 +87,21 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    return { addBoard, getPins, addPin, deletePins, getBoards };
+    function getBoard(boardId){
+        return $q( (resolve, reject) => {
+            $http
+            .get(`https://unpinterested-7fd33.firebaseio.com/boards/${boardId}.json`)
+            .then( (data) => {
+                console.log("data getBoard", data.data);
+                resolve(data);
+            })
+            .catch( (error) => {
+                reject(error);
+                console.log("errro");
+            });
+        });
+    }
+
+    return { addBoard, getPins, addPin, deletePins, getBoards, getBoard };
 
 });

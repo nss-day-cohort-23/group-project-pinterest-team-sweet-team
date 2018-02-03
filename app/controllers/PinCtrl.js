@@ -13,6 +13,8 @@ angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $ro
     .then( (data) => {
         console.log("pins data", data);
         $scope.pins = data.data;
+        
+
     });
 
     $scope.savePin = () => {
@@ -27,13 +29,17 @@ angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $ro
         });
     };
 
-    FbFactory.getBoards() //cb get board names to match to boardId on pins
-    .then((data) =>{
-        console.log("board data in pinCtrl", data); //CB
-        $scope.pinBoards = data;
-        console.log("pinBoards",$scope.pinBoards); //CB
-    }
-);
+    $scope.getNameOfBoard = () =>{
+        console.log("get");
+        FbFactory.getBoard($routeParams.boardId)
+        .then((data)=>{
+            $scope.boardName = data.data.name;
+            console.log("scope.boardName", $scope.boardName);
+        });
+    };
+
+    $scope.getNameOfBoard();
+
 //cb
 } else {
     console.log("not logged in");
