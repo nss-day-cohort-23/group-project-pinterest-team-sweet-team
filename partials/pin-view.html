@@ -3,23 +3,24 @@
 
     <h1>{{boardName}}</h1>
    
-         <div id="newPinCard">
-            <input type="text" placeholder="Pin Name" ng-model="newPin.name">
-            <br>
-            <input type="text" placeholder="Image URL" ng-model="newPin.url">
-            <button ng-click="savePin()">Add Pin</button>
-        </div>
 
-        <div class="band"><!-- cb add class band for grid styling -->
+         
+
+        <div class="pinBand"><!-- cb add class band for grid styling -->
+            <div id="newPinCard" class ="pinCard"> <!-- cb move thing into card grid -->
+                    <input type="text" placeholder="Pin Name" ng-model="newPin.name">
+                    <br>
+                    <input type="text" placeholder="Image URL" ng-model="newPin.url">
+                    <button ng-click="savePin()">Add Pin</button>
+                </div>
             <div ng-repeat="pin in pins"> 
-                <div class="card"> <!-- cb add class card for grid styling -->
-                    <img src="{{pin.url}}" alt="?">
+                <div class="pinCard" id="pin"> <!-- cb add class card for grid styling -->
+                    <img src="{{pin.url}}" alt="?" class="pinThumb">
                     <h2>{{pin.name}}</h2>
             </div>
         </div>
-
-
-        </div>
+    </div>
+ </div>
     <!-- <ul>
         <li ng-repeat = ""></li>
         <img ng-src ="{{}}">
