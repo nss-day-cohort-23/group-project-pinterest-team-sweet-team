@@ -1,5 +1,6 @@
 
 .band {
+    padding: 15rem;
     width: 90%;
     max-width: 1240px;
     margin: 0 auto;
@@ -11,6 +12,10 @@
     grid-gap: 20px;
   }
 
+  h1 {
+   font-family:  Arial, sans-serif;
+
+  }
   .pinBand {
     width: 90%;
     max-width: 1240px;
@@ -49,10 +54,10 @@
   }
 
   .pinCard {
-    background: rgb(247, 149, 149);
+    background: rgba(247, 245, 245, 0.253);
     text-decoration: none;
     color: #444;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2rem 5rem rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -68,6 +73,20 @@
    max-height: auto;
    max-width:100%;
    
+  }
+
+  .pinHeader { //this is doing something -cb
+    padding: 20px;
+    flex: 1;
+     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pinCard h2 {
+      align-content: center;
+      margin-left: 15vmin;
   }
 
   div#newPinCard.pinCard{ //CB match input card size
