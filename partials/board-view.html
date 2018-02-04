@@ -1,7 +1,7 @@
 <div class ="boardContainer">
 
     <h1>These boards are so freakin Sweet, right?</h1>
-    
+
         <div class="band">  <!-- cb add class for grid styling -->
             <div class="newPinBoard" class="pinBoard">
                     <input type="text" placeholder="Board Name" ng-model="newBoard.name">
@@ -10,6 +10,7 @@
             <div ng-repeat="board in boards">
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h1>
+                        <img src={{pins.url}} alt="?">
                         <button ng-click="">Delete Board</button>
                     </div>
                 </div>
