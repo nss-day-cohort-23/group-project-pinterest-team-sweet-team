@@ -1,14 +1,15 @@
 <div class ="boardContainer">
+
     <h1>These boards are so freakin Sweet, right?</h1>
-    <div>
-        <input type="text" placeholder="Board Name" ng-model="newBoard.name">
-        <button ng-click="saveBoard()">Add Board</button>
-    </div>
- 
+    
         <div class="band">  <!-- cb add class for grid styling -->
+            <div class="newPinBoard" class="pinBoard">
+                    <input type="text" placeholder="Board Name" ng-model="newBoard.name">
+                    <button ng-click="saveBoard()">Add Board</button>
+                </div>
             <div ng-repeat="board in boards">
                 <div class = "pinBoard">
-                    <h6><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h6>
+                    <h1><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h1>
                         <button ng-click="">Delete Board</button>
                     </div>
                 </div>
