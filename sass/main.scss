@@ -49,7 +49,7 @@
   }
 
   .pinCard {
-    background: white;
+    background: rgb(247, 149, 149);
     text-decoration: none;
     color: #444;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -59,13 +59,21 @@
     position: relative;
     top: 0;
     transition: all .1s ease-in;
+    border-radius: 2rem 2rem 2rem 2rem;
+    justify-content: space-around; //cb try and make images go into card in the center -CB
   }
 
   .pinCard .pinThumb {
-   max-height: 20rem;
-   max-width:20rem;
+    margin: 3vmin; //cb need to move image down a little in the card
+   max-height: auto;
+   max-width:100%;
+   
   }
-  
+
+  div#newPinCard.pinCard{ //CB match input card size
+    max-height: 15rem;
+    max-width:15rem;
+  }
   .boardCard {
     background: white;
     text-decoration: none;
