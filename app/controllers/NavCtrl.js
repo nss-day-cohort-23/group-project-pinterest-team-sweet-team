@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory) {
+angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory, $location) {
     //placeholder
     $scope.logo = "http://via.placeholder.com/45x45";
 
@@ -20,6 +20,7 @@ angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory) {
                 AuthFactory.login()
                 .then(user => {
                     console.log('User: ', user);
+                    window.location = "/#!/boards";
                 });
             } else {
                 AuthFactory.logout();
