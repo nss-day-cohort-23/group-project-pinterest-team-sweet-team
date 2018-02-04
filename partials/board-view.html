@@ -4,10 +4,14 @@
         <input type="text" placeholder="Board Name" ng-model="newBoard.name">
         <button ng-click="saveBoard()">Add Board</button>
     </div>
-    <div ng-repeat="board in boards">
-        <h6><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h6>
-        <button ng-click="">Delete Board</button>
-    </div>
+ 
+        <div class="band">  <!-- cb add class for grid styling -->
+            <div ng-repeat="board in boards">
+                <h6><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h6>
+                <button ng-click="">Delete Board</button>
+            </div>
+
+        </div>
         <!-- <li ng-repeat="board in boards"></li>
         {{}}
         
