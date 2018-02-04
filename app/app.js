@@ -1,6 +1,7 @@
 "use strict";
 
 angular.module("SweetApp", ["ngRoute"])
+    .constant('_')
     .config($routeProvider => {
         $routeProvider
         .when("/login", {
@@ -25,4 +26,5 @@ angular.module("SweetApp", ["ngRoute"])
         };
         firebase.initializeApp(authConfig);
     });
+
 

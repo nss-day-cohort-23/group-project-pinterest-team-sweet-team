@@ -1,5 +1,8 @@
 <div class = "pinContainer" >
     <h1>Checkout my Sweet Stuff</h1>
+
+    <h1>{{boardName}}</h1>
+   
     <div id="newPinCard">
         <input type="text" placeholder="Pin Name" ng-model="newPin.name">
         <br>
@@ -8,7 +11,7 @@
     </div>
     <div ng-repeat="pin in pins">
         <img src="{{pin.url}}" alt="?">
-        <h1>{{pin.name}}</h1>
+        <h2>{{pin.name}}</h2>
 
     </div>
     <!-- <ul>
