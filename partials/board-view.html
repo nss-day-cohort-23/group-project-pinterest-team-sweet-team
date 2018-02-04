@@ -7,8 +7,11 @@
  
         <div class="band">  <!-- cb add class for grid styling -->
             <div ng-repeat="board in boards">
-                <h6><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h6>
-                <button ng-click="">Delete Board</button>
+                <div class = "card">
+                    <h6><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h6>
+                        <button ng-click="">Delete Board</button>
+                    </div>
+                </div>
             </div>
 
         </div>
