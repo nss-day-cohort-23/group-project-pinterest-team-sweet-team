@@ -1,3 +1,4 @@
+
 .band {
     width: 90%;
     max-width: 1240px;
@@ -14,12 +15,25 @@
     width: 90%;
     max-width: 1240px;
     margin: 0 auto;
+
      
     display: grid;
      
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 20vmin); //cb- use vmin to try and control container horizontal scroll bar
     grid-template-rows: auto;
     grid-gap: 40px;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .pinBand {
+      grid-template-columns: 1fr 1fr;
+    }  
+  }
+
+  @media only screen and (min-width: 850px) {
+    .pinBand {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 
   @media only screen and (min-width: 500px) {
@@ -48,8 +62,10 @@
   }
 
   .pinCard .pinThumb {
-   margin-bottom: 1rem;
+   max-height: 20rem;
+   max-width:20rem;
   }
+  
   .boardCard {
     background: white;
     text-decoration: none;
