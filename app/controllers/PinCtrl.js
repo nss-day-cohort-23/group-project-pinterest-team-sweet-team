@@ -85,4 +85,14 @@ angular
       console.log("clicked");
       $location.url("/boards");
     };
+
+    $scope.pinRemove = (pinId) => {
+      FbFactory.deletePins(pinId)
+      .then(() => {
+        $route.reload("/pins/:boardId");
+      });
+    };
+
+
+
   });
