@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $routeParams, $location, _, $route) {
+angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $routeParams, $location, _, $route, FilterFactory) {
+
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
     $scope.newPin = {
@@ -9,10 +11,13 @@ angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $ro
         url: ""
     };
 
+    $scope.searchTerm = FilterFactory;
+
+
     FbFactory.getPins($routeParams.boardId)
     .then( (data) => {
         console.log("pins data", data);
-        $scope.pins = data.data;
+        $scope.pins = data;
         
 
     });

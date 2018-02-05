@@ -1,6 +1,10 @@
 "use strict";
 
-angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory, $location, $window) {
+angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory, $location, $window, FilterFactory) {
+    
+    $scope.searchTerm = FilterFactory;
+
+    
     //placeholder
     $scope.logo = "http://via.placeholder.com/45x45";
 

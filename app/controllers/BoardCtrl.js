@@ -1,6 +1,9 @@
 'use strict';
 
-angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $routeParams, $location, $route, $window) {
+angular.module("SweetApp").controller("BoardCtrl", function($scope, FbFactory, $routeParams, $location, $route, $window, FilterFactory) {
+
+    $scope.searchTerm = FilterFactory;
+
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {

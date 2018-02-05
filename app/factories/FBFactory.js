@@ -107,7 +107,8 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
             .get(`https://unpinterested-7fd33.firebaseio.com/pins.json?orderBy="boardId"&equalTo="${boardId}"`)
             .then( (data) => {
                 console.log("data", data.data);
-                resolve(data);
+                let pinArr = Object.values(data.data);
+                resolve(pinArr);
             })
             .catch( (error) => {
                 reject(error);
