@@ -3,11 +3,12 @@
         <div class="navbar">
             <a href=""><img src="{{logo}}" alt="Sweet Team Logo"></a>
             <input class="search-bar" type="text" ng-model="search">
+            <ul>
+                    <li ng-repeat="item in navBar"> <!-- cb moved login logout into navbar -->
+                        <a href="#" ng-click="navAuth(item.name)">{{item.name}}</a>
+                    </li>
+                </ul>
         </div>
-        <ul>
-            <li ng-repeat="item in navBar">
-                <a href="#" ng-click="navAuth(item.name)">{{item.name}}</a>
-            </li>
-        </ul>
+       
     </div>
 </nav>
