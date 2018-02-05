@@ -59,6 +59,34 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
             });
         });
     }
+//cb 
+    function addPinBoardCover(newPinUrl,boardId) {
+        return $q( (resolve, reject) => {
+            $http
+            .patch(`https://unpinterested-7fd33.firebaseio.com/boards/${boardId}.json`, JSON.stringify({url:`${newPinUrl}`}))
+            .then( (data) => {
+                resolve(data);
+            })
+            .catch( (error) => {
+                console.log("ERRRORRRR");
+                reject(error);
+            });
+        });
+    }
+    //cb function
+
+    // function addCoverToBoard(newPinUrl, boardId) {
+    //     return $q( (resolve, reject) => {
+    //         $http
+    //         .patch(`https://unpinterested-7fd33.firebaseio.com/boards.json/${boardId}`, JSON.stringify(newPinUrl))
+    //         .then( (data) => {
+    //             resolve(data);
+    //         })
+    //         .catch( (error) => {
+    //             reject(error);
+    //         });
+    //     });
+    // }
 
     function addBoard(newBoard) {
         return $q( (resolve, reject) => {
@@ -102,6 +130,6 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    return { addBoard, getPins, addPin, deletePins, getBoards, getBoard };
+    return { addBoard, getPins, addPin, deletePins, getBoards, getBoard, addPinBoardCover    };
 
 });

@@ -1,0 +1,187 @@
+
+
+.band {
+    
+    width: 100%;
+    max-width: 1240px;
+    margin: auto;
+    padding-left: 6rem; //cb
+    display: grid;
+     
+    grid-template-columns: repeat(3, 50vmin); //cb
+    grid-template-rows: auto;
+    grid-gap: 5rem;
+  }
+
+  h1, h2, p, a {
+   font-family:  Arial;
+  }
+
+  a {
+      text-decoration: none;
+      font-weight: 100;
+      color: gray;
+      display: inline-flex;
+  }
+
+  a:hover{
+      color:rgb(49, 47, 47);
+  }
+  .pinBand {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+
+     
+    display: grid;
+     
+    grid-template-columns: repeat(4, 20vmin); //cb- use vmin to try and control container horizontal scroll bar
+    grid-template-rows: auto;
+    grid-gap: 40px;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .pinBand {
+      grid-template-columns: 1fr 1fr;
+    }  
+  }
+
+  @media only screen and (min-width: 850px) {
+    .pinBand {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+//   @media only screen and (min-width: 500px) {
+//     .band {
+//       grid-template-columns: 1fr 1fr;
+//     }  
+//   }
+
+//   @media only screen and (min-width: 850px) {
+//     .band {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+//   }
+
+  .pinCard {
+    background: rgba(247, 245, 245, 0.253);
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2rem 5rem rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    border-radius: 2rem 2rem 2rem 2rem;
+    justify-content: space-around; //cb try and make images go into card in the center -CB
+  }
+
+  .pinCard .pinThumb {
+    margin: 3vmin; //cb need to move image down a little in the card
+   max-height: auto;
+   max-width:100%;
+   
+  }
+
+  .pinHeader { //this is doing something -cb
+    padding: 20px;
+    flex: 1;
+     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pinCard h2 {
+      align-content: center;
+      margin-left: 15vmin;
+  }
+
+  div#newPinCard.pinCard{ //CB match input card size
+    max-height: 15rem;
+    max-width:15rem;
+  }
+
+
+  .pinBoard{
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    justify-content: space-around;
+  }
+
+
+  input {
+    border: 5px solid rgb(243, 241, 241); 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(206, 203, 203, 0.5);
+    margin: 0 0 10px 0;
+}
+
+.newPinBoard {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    justify-content: space-around;
+}
+
+.search-bar {
+    min-width: 70vw;
+
+}
+
+
+
+.navContainer{
+    display:flex;
+    flex-wrap: wrap;
+    border-bottom:  1px solid gray;
+    flex-grow: 1;
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+}
+//   .pinCard:hover { // these are glitchy so commented out at the moment -cb
+//     top: 2rem;
+//     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+//   }
+
+//   .pinBoard:hover {
+//     top: 2rem;
+//     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+//   }
+
+//   .card h2 {
+//     font-size: 20px;
+//     margin: 0;
+//     color: rgb(180, 30, 30);
+//   }
+ 
