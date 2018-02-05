@@ -130,7 +130,25 @@ angular.module("SweetApp").factory("FbFactory", ($http, $q) => {
             });
         });
     }
-
-    return { addBoard, getPins, addPin, deletePins, getBoards, getBoard, addPinBoardCover    };
+    function getBoardsForHomeView() {
+        return $q( (resolve, reject) => {
+            $http
+            .get(`https://unpinterested-7fd33.firebaseio.com/boards.json`)
+            .then( (boards) => {
+                let keys =Object.keys(boards.data);
+                keys.forEach(key => {
+                    boards.data[key].boardId = key;
+                });
+                console.log("get boards data", boards);
+                let boardsDataArr = Object.values(boards.data);
+                resolve(boardsDataArr);
+            })
+            .catch( (error) => {
+                console.log("eororror");
+                reject(error);
+            });
+        });
+    }
+    return { addBoard, getPins, addPin, deletePins, getBoards, getBoard, addPinBoardCover,getBoardsForHomeView};
 
 });
