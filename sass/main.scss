@@ -86,6 +86,13 @@
    
   }
 
+  .pinBoard .boardThumb {
+    margin: 3vmin; //CB images in boards 
+   max-height: auto;
+   max-width:100%;
+   
+  }
+
   .pinHeader { //this is doing something -cb
     padding: 20px;
     flex: 1;
@@ -105,6 +112,7 @@
     max-width:15rem;
   }
 
+  
 
   .pinBoard{
     background: white;
