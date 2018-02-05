@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $routeParams, $location, _) {
+angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $routeParams, $location, _, $route) {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
     $scope.newPin = {
@@ -23,7 +23,7 @@ angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $ro
         $scope.newPin.boardId = $routeParams.boardId;
         console.log("route id", $routeParams.id, "route", $routeParams);
         $scope.newPin.uid = firebase.auth().currentUser.uid;
-        
+
         FbFactory.addPinBoardCover($scope.newPin.url,$routeParams.boardId)
         .then((data)=>{
             console.log("patched"); 
@@ -34,7 +34,7 @@ angular.module("SweetApp").controller("PinCtrl", function($scope, FbFactory, $ro
         FbFactory.addPin($scope.newPin)
         .then( (data) => {
             console.log("data in pin add pin", data);
-            $location.url(`/pins/`);  // this was pins but that route doesnt exist -CB
+            $route.reload(`pins/${$scope.newPin.boardId}`);  // this was pins but that route doesnt exist -CB
         })
         .catch((error) =>{
             console.log(error);
