@@ -11,16 +11,11 @@
             <div ng-repeat="board in boards | filter: searchTerm.searchTerm">
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h1>
-                        <img src={{board.url}} alt="?" class="boardThumb">
-                        <button ng-click="">Delete Board</button>
+                        <img src={{board.url}} alt="?">
+                        <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
                     </div>
                 </div>
             </div>
 
         </div>
-        <!-- <li ng-repeat="board in boards"></li>
-        {{}}
-        
-    </ul>
-        <input type = "button" ng-click="">See My Pins -->
 </div>
