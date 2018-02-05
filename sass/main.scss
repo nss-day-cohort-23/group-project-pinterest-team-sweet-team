@@ -14,7 +14,7 @@
   }
 
   h1, h2, p, a {
-   font-family:  Arial;
+    font-family: 'Lobster', cursive;
   }
 
   a {
@@ -193,3 +193,19 @@ ul li {
 //     color: rgb(180, 30, 30);
 //   }
  
+.flex-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  margin-right: 50px;
+  margin-left: 20px;
+}
+.pinCard h2 {
+  font-size: 1em;
+  text-align: center;
+  // justify-content: center;
+  // margin-left: 15vmin;
+  margin: auto;
+  width: 50%;
+}
