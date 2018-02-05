@@ -12,15 +12,10 @@
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h1>
                         <img src={{board.url}} onerror="this.src='https://www.mpiwsc.org/media/com_jbusinessdirectory/pictures/no_image.jpg'" alt="New Board" class="boardThumb">
-                        <button ng-click="">Delete Board</button>
+                        <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
                     </div>
                 </div>
             </div>
 
         </div>
-        <!-- <li ng-repeat="board in boards"></li>
-        {{}}
-        
-    </ul>
-        <input type = "button" ng-click="">See My Pins -->
 </div>
