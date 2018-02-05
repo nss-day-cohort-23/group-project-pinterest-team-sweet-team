@@ -6,11 +6,12 @@ angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory, $
 
     
     //placeholder
-    $scope.logo = "http://via.placeholder.com/45x45";
+    $scope.logo = "images/pizza-ghost.png";
 
     $scope.navBar = [
         {
-            name: "Login"
+            name: "Login",
+            bang: "!"
 
         },
         {
@@ -30,4 +31,13 @@ angular.module("SweetApp").controller("NavCtrl", function($scope, AuthFactory, $
                 AuthFactory.logout();
             }
         }; 
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                $scope.$apply($scope.loggedIn = true);
+            } else {
+                $scope.loggedIn = false;
+                $scope.$apply();
+            }
+        });
 });
