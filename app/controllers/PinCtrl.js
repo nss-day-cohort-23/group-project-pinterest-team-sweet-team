@@ -92,7 +92,4 @@ angular
         $route.reload("/pins/:boardId");
       });
     };
-
-
-
   });

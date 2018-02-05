@@ -34,6 +34,7 @@ angular.module("SweetApp").controller("BoardCtrl", function ($scope, FbFactory, 
                     });
             };
 
+            
             // I THINK THIS NEEDS TO BE IN THE PIN CONTROLLER
             // This promise gets all the logged in user's pins for the particular board.
             //cb this function isnt returning anything because on this view there is no route param because this url ends in /boards
