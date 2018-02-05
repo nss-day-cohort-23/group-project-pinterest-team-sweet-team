@@ -77,6 +77,7 @@ angular
         //cb
       } else {
         console.log("not logged in");
+        
       }
     });
     //cb
