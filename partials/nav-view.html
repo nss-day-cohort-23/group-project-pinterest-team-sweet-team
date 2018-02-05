@@ -2,7 +2,7 @@
     <div class="navContainer">
         <div class="navbar">
             <a href=""><img src="{{logo}}" alt="Sweet Team Logo"></a>
-            <input class="search-bar" type="text" ng-model="search">
+            <input class="search-bar" type="text" ng-model="searchTerm.searchTerm">
             <ul>
                     <li ng-repeat="item in navBar"> <!-- cb moved login logout into navbar -->
                         <a href="#" ng-click="navAuth(item.name)">{{item.name}}</a>
